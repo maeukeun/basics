@@ -3,10 +3,9 @@ package ru.netology;
 import static org.testng.Assert.assertEquals;
 
 
-
 public class CashbackHackServiceTest {
     @org.testng.annotations.Test
-    public void correctCost(){
+    public void correctCost() {
         CashbackHackService test = new CashbackHackService();
         int amount = 900;
         int actual = test.remain(amount);
@@ -15,7 +14,7 @@ public class CashbackHackServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void boundsCost(){
+    public void boundsCost() {
         CashbackHackService test = new CashbackHackService();
         int amount = 999;
         int actual = test.remain(amount);
@@ -23,4 +22,12 @@ public class CashbackHackServiceTest {
         assertEquals(actual, expected);
     }
 
+    @org.testng.annotations.Test
+    public void incorrectCost() {
+        CashbackHackService test = new CashbackHackService();
+        int amount = 1000;
+        int actual = test.remain(amount);
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
 }
